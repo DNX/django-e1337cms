@@ -14,6 +14,9 @@ class Page(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     changed_date = models.DateTimeField(auto_now=True)
 
+    def __unicode__(self):
+        return unicode(self.title)
+
     class Meta:
         ordering = ['creation_date']
         verbose_name = _('page')
