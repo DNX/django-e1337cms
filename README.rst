@@ -134,6 +134,10 @@ How can I try e1337cms functionality?
 
     $ python manage.py syncdb
 
+#. Migrate the db::
+
+    $ python manage.py migrate
+
 #. Start the server::
 
     $ python manage.py runserver
@@ -201,6 +205,13 @@ Special thanks to the authors and contributors of this projects:
 =========
 Changelog
 =========
+
+0.0.2
+-----
+
+* added initial South migration
+* enabled South in testsite project
+* updated the documentation
 
 0.0.1
 -----
