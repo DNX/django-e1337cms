@@ -53,8 +53,7 @@ very simple, in three steps:
 
 #. Include the 'e1337cms.urls' urlpatterns at the end of your urlpatterns.
 
-#. Optional: Modify Your settings.py, declare your **INDEX_PAGE_SLUG** and
-**RST_SETTINGS** settings.
+#. Optional: Modify Your settings.py, declare your **INDEX_PAGE_SLUG** and **RST_SETTINGS** settings.
 
 Below the long explanation of each step...
 
@@ -74,6 +73,25 @@ Example::
         # Added.
         'e1337cms',
     ]
+
+Include the 'e1337cms.urls'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You need to include the 'e1337cms.urls' urlpatterns at the end of your
+urlpatterns::
+
+    url(r'^', include('e1337cms.urls')),
+
+example::
+
+    from django.conf.urls import patterns, include, url
+    from django.contrib import admin
+    admin.autodiscover()
+
+    urlpatterns = patterns('',
+        url(r'^admin/', include(admin.site.urls)),
+        url(r'^', include('e1337cms.urls')),
+    )
 
 Optional: modify Your settings.py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
