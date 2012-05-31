@@ -26,6 +26,27 @@ class ViewTest(TestCase):
         self.assertContains(r, "first page content")
         self.assertContains(r, "<strong>First page title</strong>")
 
+    def test_complex_page_render(self):
+        self.page.content = '''
+            {% extends "base.html" %}
+    {% load e1337tags %}
+    {% block title %}e1337::{{ page.title }}{% endblock title %}
+
+    {% block body %}
+    {% rst %}
+My h1 row
+=========
+    {% endrst %}
+    another content, bla, <strong>blu</strong>, bli...
+    <p>html content</p>
+
+    {% endblock body %}
+        '''
+        self.page.save()
+        r = self.client.get(reverse("page", kwargs={'slug': 'first-page-slug'}))
+        self.assertContains(r, "<title>e1337::First page title</title>")
+        self.assertContains(r, "<h1 class=\"title\">My h1 row</h1>")
+
     def test_rst_block(self):
         # title
         self.page.content = '{% load e1337tags %}{% rst %}Page title\n=================={% endrst %}'

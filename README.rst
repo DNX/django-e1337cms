@@ -17,6 +17,7 @@ Page which extends a template::
     {% extends "base.html" %}
     {% load e1337tags %}
     {% block title %}e1337::{{ page.title }}{% endblock title %}
+
     {% block body %}
     {% rst %}
     My h1 row
