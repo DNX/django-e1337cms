@@ -20,11 +20,11 @@ class ViewTest(TestCase):
         r = self.client.get(reverse("page", kwargs={'slug': 'first-page-slug'}))
         self.assertContains(r, "first page content")
         self.assertNotContains(r, "First page title")
-        self.page.content = '{{ page.title }}\nfirst page content'
+        self.page.content = '<strong>{{ page.title }}</strong>\nfirst page content'
         self.page.save()
         r = self.client.get(reverse("page", kwargs={'slug': 'first-page-slug'}))
         self.assertContains(r, "first page content")
-        self.assertContains(r, "First page title")
+        self.assertContains(r, "<strong>First page title</strong>")
 
     def test_rst_block(self):
         # title
