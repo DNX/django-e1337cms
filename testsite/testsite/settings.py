@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'e1337cms',
+    'south',
 )
 
 ### START e1337cms settings #
