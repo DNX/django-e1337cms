@@ -1,0 +1,4 @@
+include LICENSE
+include README.rst
+recursive-include e1337cms/templates *
+prune testsite
