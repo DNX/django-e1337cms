@@ -63,3 +63,11 @@ My h1 row
         self.page.save()
         r = self.client.get(reverse("page", kwargs={'slug': 'first-page-slug'}))
         self.assertContains(r, "<div class=\"document\">\n<p><em>italic text</em></p>\n</div>\n")
+
+    def test_index_page_slug(self):
+        r = self.client.get(reverse("index_page"))
+        self.assertEquals(r.status_code, 404)
+        self.page.slug = 'home'
+        self.page.save()
+        r = self.client.get(reverse("index_page"))
+        self.assertContains(r, "first page content")

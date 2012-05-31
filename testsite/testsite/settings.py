@@ -13,6 +13,7 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -125,6 +126,11 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'e1337cms',
 )
+
+### START e1337cms settings #
+INDEX_PAGE_SLUG = 'home'
+RST_SETTINGS = {}
+### END e1337cms settings #
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
