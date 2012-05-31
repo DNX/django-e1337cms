@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
 
 
 class Page(models.Model):
@@ -13,6 +14,9 @@ class Page(models.Model):
 
     creation_date = models.DateTimeField(auto_now_add=True)
     changed_date = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse("page", kwargs={"slug": self.slug})
 
     def __unicode__(self):
         return unicode(self.title)
