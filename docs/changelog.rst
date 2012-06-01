@@ -1,6 +1,12 @@
 Changelog
 =========
 
+dev
+-----
+
+* fixed a bug in e1337cms urlpatterns
+* added RequestContext when render the page content
+
 0.0.3
 -----
 
