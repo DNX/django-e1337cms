@@ -1,6 +1,6 @@
 # coding: utf-8
 from django.views.generic import DetailView
-from django.template import Context, Template
+from django.template import RequestContext, Template
 from django.http import HttpResponse
 from e1337cms.models import Page
 
@@ -15,5 +15,5 @@ class PageDetail(DetailView):
         """
         t = Template(self.object.content)
 
-        rendered = t.render(Context(context))
+        rendered = t.render(RequestContext(self.request, context))
         return HttpResponse(rendered)
