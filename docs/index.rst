@@ -11,6 +11,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   getting_started
+   try_e1337cms
+   some_examples
+   authors
+   credits
+   changelog
 
 
 Indices and tables
