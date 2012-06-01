@@ -1,2 +1,4 @@
 .pyc$
 .db$
+django_e1337cms.egg-info/
+dist/
