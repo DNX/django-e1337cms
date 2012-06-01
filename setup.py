@@ -5,7 +5,7 @@ from fnmatch import fnmatchcase
 from distutils.util import convert_path
 from setuptools import setup, find_packages
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 
 
 def read(*parts):
@@ -130,5 +130,6 @@ setup(
     zip_safe=False,
     install_requires=[
         'django >= 1.1',
+        'docutils >= 0.9',
     ],
 )
